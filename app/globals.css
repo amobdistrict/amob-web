@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+/* ============================================================
+   PREMIUM RED-DOMINANT (CRIMSON CANVAS) DESIGN SYSTEM
+   ============================================================ */
+
+@theme {
+
+  /* Backgrounds (Reds from image dominate the canvas) */
+  --color-brand-bg: #990000;                /* Deep Crimson / Claret as main body bg */
+  --color-brand-surface: #b90000;           /* Mid Red for primary containers/cards */
+  --color-brand-surface-secondary: #e50000; /* Bright Red for subtle layered surfaces */
+  --color-brand-surface-hover: #f01a1a;     /* Lighter Red highlight variant */
+
+  /* Typography (High contrast against red backgrounds) */
+  --color-brand-text: #ffffff;              /* Crisp White text */
+  --color-brand-text-secondary: #f5f5f5;    /* Off-white text */
+  --color-brand-muted: #e5e5e5;             /* Light Gray text */
+  --color-brand-subtle: #d4d4d4;            /* Mid Gray text */
+  --color-brand-disabled: #b3b3b3;          /* Darker muted text */
+
+  /* Borders */
+  --color-brand-border: #b90000;            /* Self-matching crimson borders */
+  --color-brand-border-strong: #ffffff;     /* White borders for distinct separation */
+
+  /* Accent (Flipped to deep monochrome for punchy contrast) */
+  --color-accent: #000000;                 /* Pitch Black as primary interactive element */
+  --color-accent-hover: #171717;           /* Charcoal Black */
+  --color-claret: #ffffff;                 /* Flipped to white for prominent indicators */
+  --color-accent-light: rgba(0, 0, 0, 0.25);/* Translucent black backing */
+
+  /* Success */
+  --color-success: #22c55e;
+  --color-success-light: #052e16;
+
+  /* Warning */
+  --color-warning: #f59e0b;
+  --color-warning-light: #451a03;
+
+  /* Danger / Critical */
+  --color-critical: #ffffff;
+  --color-critical-light: #7f1d1d;
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+@layer base {
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-brand-text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--color-brand-text-secondary);
+  line-height: 1.7;
+}
+
+small {
+  color: var(--color-brand-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: .2s;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  background: rgba(0, 0, 0, 0.2);          /* Dark integrated inputs */
+  color: var(--color-brand-text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: .2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .15);
+}
+
+::selection {
+  background: #ffffff;
+  color: #990000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+
+@layer components {
+
+.card {
+  background: var(--color-brand-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: .2s;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: var(--color-brand-surface-secondary);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center;
+  padding: .8rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: .2s;
+  border: none;
+}
+
+.btn-primary {
+  background: #000000;                     /* Deep black primary buttons pop off red */
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #171717;
+}
+
+.btn-secondary {
+  background: #ffffff;                     /* Clean white alternative buttons */
+  color: #990000;
+}
+
+.btn-secondary:hover {
+  background: #f5f5f5;
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #990000;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: .8rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.badge {
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.badge-success {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.badge-warning {
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.badge-danger {
+  background: var(--color-critical-light);
+  color: var(--color-critical);
+}
+
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+@layer utilities {
+
+.glass {
+  background: rgba(185, 0, 0, 0.5);       /* Frosted crimson glass effect */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.divider {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.shadow-soft {
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.text-muted {
+  color: var(--color-brand-muted);
+}
+
+.text-subtle {
+  color: var(--color-brand-subtle);
+}
+
+.surface {
+  background: var(--color-brand-surface);
+}
+
+.surface-secondary {
+  background: var(--color-brand-surface-secondary);
+}
+
+}

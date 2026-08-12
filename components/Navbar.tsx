@@ -208,10 +208,10 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="AMOB Logo"
-              width={180}
-              height={180}
+              width={220}
+              height={220}
               priority
-              className="h-14 w-auto max-w-[140px] object-contain sm:h-16 sm:max-w-[160px]"
+              className="h-16 w-auto max-w-[180px] object-contain sm:h-20 sm:max-w-[210px]"
             />
           </Link>
 

@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import {
-  .
-,
+  Plus,
   Trash2,
   Save,
   Loader2,
@@ -632,8 +631,7 @@ Loading...
                 </div>
 
                 <button type="button" onClick={addChartRow} className="w-full py-3 border-2 border-dashed border-zinc-200 rounded-xl font-black text-xs uppercase text-zinc-400 hover:text-black hover:border-black transition-colors flex items-center justify-center gap-2">
-                  <.
- size={14} /> Append Row Configuration
+                  <Plus size={14} /> Append Row Configuration
                 </button>
               </div>
             )}
@@ -662,8 +660,7 @@ Loading...
 
             <div className="flex gap-3">
               <input className="flex-1 bg-zinc-50 px-5 py-4 rounded-2xl text-sm font-bold outline-none ring-1 ring-zinc-100 focus:ring-2 focus:ring-black transition-all" placeholder="New variant type — e.g. Size, Color..." value={newAxisName} onChange={e => setNewAxisName(e.target.value)} onKeyDown={e => e.key === 'Enter' && addAxis()} />
-              <button onClick={addAxis} disabled={!newAxisName.trim()} className="bg-black text-white px-6 py-4 rounded-2xl font-black text-xs uppercase hover:scale-105 active:scale-95 transition-all disabled:opacity-30 flex items-center gap-2"><.
- size={16} /> Add Type</button>
+              <button onClick={addAxis} disabled={!newAxisName.trim()} className="bg-black text-white px-6 py-4 rounded-2xl font-black text-xs uppercase hover:scale-105 active:scale-95 transition-all disabled:opacity-30 flex items-center gap-2"><Plus size={16} /> Add Type</button>
             </div>
 
             {/* Matrix Table */}
@@ -771,8 +768,7 @@ function AxisCard({ axis, isOpen, onToggle, onRemoveAxis, onAddValue, onRemoveVa
           )}
           <div className="flex gap-2">
             <input className="flex-1 bg-white px-4 py-3 rounded-xl text-sm font-bold outline-none ring-1 ring-zinc-100 focus:ring-2 focus:ring-black transition-all" placeholder="Value..." value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && commit()} />
-            <button type="button" onClick={commit} disabled={!input.trim()} className="bg-black text-white px-5 py-3 rounded-xl font-black text-xs uppercase"><.
- size={16} /></button>
+            <button type="button" onClick={commit} disabled={!input.trim()} className="bg-black text-white px-5 py-3 rounded-xl font-black text-xs uppercase"><Plus size={16} /></button>
           </div>
         </div>
       )}

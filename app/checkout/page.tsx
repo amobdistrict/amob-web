@@ -268,8 +268,7 @@ export default function CheckoutPage() {
         name: `${formData.firstName} ${formData.lastName}`,
       },
       customizations: {
-        title: "AMOB
-Apparels",
+        title: "AMOB Apparels",
         description: `Order of ${cart.length} item(s)`,
         logo: "/logo.png",
       },
